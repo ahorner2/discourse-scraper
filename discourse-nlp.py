@@ -16,9 +16,9 @@ from _utils import print_full, scrolling
 
 '''
 Discourse scraper and sentiment analysis tool. Can be used
-for majority of boards using the service.
+for majority of boards using the service. Reach out if you find a particular site isn't pulling!
 
-Enjoy!
+Otherwise, enjoy! :)
 
 '''
 
@@ -74,20 +74,20 @@ for doc in MAP.keys():
             for word in word_frequencies.keys():
                 maximum_frequncy = max(word_frequencies.values())
                 word_frequencies[word] = (word_frequencies[word]/maximum_frequncy)
-
+            # tokenized word list and frequency scores
             df = pd.DataFrame({
                 'word': word_frequencies.keys(),
                 'frequency scores': word_frequencies.values()
             })
-
+            # tokenized word list
             word_list = pd.DataFrame({
                 'word': word_frequencies.keys()
             })
-
+            # tokenized sentence list
             sent_list = pd.DataFrame(
                 {'sentence': [sentence_list], 'protocol': protocol})
 
-            current_date = f'defi_wordlist_{datetime.datetime.now().strftime("%m.%d.%Y")}.csv'
+            current_date = f'defi_nlp{datetime.datetime.now().strftime("%m.%d.%Y")}.csv'
 
             print_full(word_list.head())
 

@@ -6,9 +6,12 @@ import datetime
 from _utils import print_full, scrolling
 
 '''
-Data for all posts links scraped in MAP.
 
+Data for all posts links scraped in MAP.
 Output: Links, titles, main tags, sub tags, replies, views, and dates
+
+Script can be used for most Discourse forums.
+
 '''
 
 MAP = {
